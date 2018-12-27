@@ -15,8 +15,8 @@
     "ios": "8.0"
   },
   "source_files": "TuyaSmartActivator/Classes/**/*",
-  "public_header_files": "Pod/Classes/*.h",
-  "vendored_libraries": "Pod/Classes/*.a",
+  "public_header_files": "TuyaSmartActivator/Classes/*.h",
+  "vendored_libraries": "TuyaSmartActivator/Classes/*.a",
   "frameworks": "Foundation",
   "libraries": [
     "c++",

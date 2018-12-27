@@ -18,18 +18,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    NSString *ssid = @"";
-    NSString *password = @"";
-    NSString *token = @"";
+	
+    // EZ
+    NSString *ssid = @"ssid";
+    NSString *password = @"ssid_pwd";
+    NSString *token = @"token";
     [[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
