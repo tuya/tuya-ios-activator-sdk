@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TuyaSmartActivator'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of TuyaSmartActivator.'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/xuchengcheng/TuyaSmartActivator'
+  s.homepage         = 'https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   # s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'xucheng' => 'xucheng@tuya.com' }
@@ -30,13 +30,14 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'TuyaSmartActivator/Classes/**/*'
-  
+#  s.source_files = 'TuyaSmartActivator/Classes/*.{h,m}'
+
   s.public_header_files = 'TuyaSmartActivator/Classes/*.h'
   s.vendored_libraries = 'TuyaSmartActivator/Classes/*.a'
 
   s.frameworks = 'Foundation'
   s.libraries  = 'c++', 'z'
+  
   s.dependency 'CocoaAsyncSocket'
   
 end
