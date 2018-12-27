@@ -1,0 +1,1 @@
+# tuyasmart_ios_activator_sdk
