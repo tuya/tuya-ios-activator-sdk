@@ -1,6 +1,6 @@
 {
   "name": "TuyaSmartActivator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "summary": "A short description of TuyaSmartActivator.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git",
@@ -9,15 +9,14 @@
   },
   "source": {
     "git": "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "TuyaSmartActivator/Classes/*",
+  "source_files": "TuyaSmartActivator/Classes/*.{h,m}",
   "public_header_files": "TuyaSmartActivator/Classes/*.h",
   "vendored_libraries": "TuyaSmartActivator/Classes/*.a",
-  "preserve_paths": "TuyaSmartActivator/Classes/*.a",
   "frameworks": "Foundation",
   "libraries": [
     "c++",

@@ -30,7 +30,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-#  s.source_files = 'TuyaSmartActivator/Classes/*.{h,m}'
+  s.source_files = 'TuyaSmartActivator/Classes/*.{h,m}'
 
   s.public_header_files = 'TuyaSmartActivator/Classes/*.h'
   s.vendored_libraries = 'TuyaSmartActivator/Classes/*.a'

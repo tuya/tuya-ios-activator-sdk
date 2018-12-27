@@ -18,14 +18,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    // EZ
+    
     NSString *ssid = @"ssid";
     NSString *password = @"ssid_pwd";
     NSString *token = @"token";
+	
+    // EZ
     [[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
     
+    // AP
+    [[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
     
+    // Zigbee Gateway
+    [[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
+    
+    // stop
+    [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
 }
 
 
