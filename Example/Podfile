@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'TuyaSmartActivator_Example' do
+  pod 'TuyaSmartActivator', :path => '../'
+
+  target 'TuyaSmartActivator_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

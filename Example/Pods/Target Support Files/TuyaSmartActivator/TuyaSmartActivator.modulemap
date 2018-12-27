@@ -1,0 +1,6 @@
+framework module TuyaSmartActivator {
+  umbrella header "TuyaSmartActivator-umbrella.h"
+
+  export *
+  module * { export * }
+}

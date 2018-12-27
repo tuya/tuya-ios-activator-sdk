@@ -1,0 +1,30 @@
+{
+  "name": "TuyaSmartActivator",
+  "version": "0.1.0",
+  "summary": "A short description of TuyaSmartActivator.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/xuchengcheng/TuyaSmartActivator",
+  "authors": {
+    "xucheng": "xucheng@tuya.com"
+  },
+  "source": {
+    "git": "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TuyaSmartActivator/Classes/**/*",
+  "public_header_files": "Pod/Classes/*.h",
+  "vendored_libraries": "Pod/Classes/*.a",
+  "frameworks": "Foundation",
+  "libraries": [
+    "c++",
+    "z"
+  ],
+  "dependencies": {
+    "CocoaAsyncSocket": [
+
+    ]
+  }
+}

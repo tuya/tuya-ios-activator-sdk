@@ -1,0 +1,23 @@
+PODS:
+  - CocoaAsyncSocket (7.6.3)
+  - TuyaSmartActivator (0.1.0):
+    - CocoaAsyncSocket
+
+DEPENDENCIES:
+  - TuyaSmartActivator (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaAsyncSocket
+
+EXTERNAL SOURCES:
+  TuyaSmartActivator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  TuyaSmartActivator: 2a36c2f6332c21ee050a5c9840dbc8afaddbca0b
+
+PODFILE CHECKSUM: e59dd6a50a16fdfb2b47d6c0744a438ac252a8fa
+
+COCOAPODS: 1.5.3
