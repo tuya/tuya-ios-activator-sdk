@@ -82,9 +82,7 @@ end
 NSString *ssid = @"";
 NSString *password = @"";
 NSString *token = @"";
-[[TuyaSmartActivator sharedInstance]
-startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password
-token:token];
+[[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
 ```
 
 ##### 停止配网
@@ -92,8 +90,9 @@ token:token];
 开始配网操作后，APP会持续广播配网信息（直到配网成功，或是超时）。如果需要中途取消操作或配网完成，需要调用`[TuyaSmartActivator stopConfigWiFi]`方法。
 
 ```
-// stop config
-void stop_config_wifi();
+- (void)stopConfigWifi {
+    [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
+}
 ```
 
 ##### AP 模式配网
@@ -103,9 +102,7 @@ void stop_config_wifi();
 NSString *ssid = @"";
 NSString *password = @"";
 NSString *token = @"";
-[[TuyaSmartActivator sharedInstance]
-startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password
-token:token];
+[[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
 ```
 
 ##### Zigbee 网关配网 
@@ -113,6 +110,6 @@ token:token];
 ```objective-c
 // start config Zigbee Gateway
 NSString *token = @"";
-[[TuyaSmartActivator sharedInstance]
-startConfigWiredDeviceWithToken:token];
+[[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
 ```
+
