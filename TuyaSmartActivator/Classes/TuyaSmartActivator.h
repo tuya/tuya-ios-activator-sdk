@@ -9,12 +9,9 @@
 #import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
-    TYActivatorModeEZ,//快连模式
-    TYActivatorModeAP,//热点模式
+    TYActivatorModeEZ, // fast connect mode (EZ)
+    TYActivatorModeAP, // hotspot mode (AP)
 } TYActivatorMode;
-
-/// zigbee 重置后app会收到网关的udp包
-FOUNDATION_EXPORT NSString * const TuyaSmartNotificationDiscoverUnActivatorDevice;
 
 
 @interface TuyaSmartActivator : NSObject
@@ -22,12 +19,12 @@ FOUNDATION_EXPORT NSString * const TuyaSmartNotificationDiscoverUnActivatorDevic
 + (instancetype)sharedInstance;
 
 /**
- *  开始配网 (无线配网)
+ *  start network configuration
  *
- *  @param mode     配网模式, EZ或AP模式
- *  @param ssid     路由器热点名称
- *  @param password 路由器热点密码
- *  @param token    配网Token
+ *  @param mode     mode of network configuration (EZ or AP)
+ *  @param ssid     router name
+ *  @param password router password
+ *  @param token    token
  */
 - (void)startConfigWiFiWithMode:(TYActivatorMode)mode
                            ssid:(NSString *)ssid
@@ -35,14 +32,14 @@ FOUNDATION_EXPORT NSString * const TuyaSmartNotificationDiscoverUnActivatorDevic
                           token:(NSString *)token;
 
 /**
- *  开始配网（有线配网,需要保证网关和路由器在一个局域网内）
+ *  Zigbee gateway configuration
  *
- *  @param token    配网Token
+ *  @param token    token
  */
 - (void)startConfigWiredDeviceWithToken:(NSString *)token;
 
 /**
- *  停止配网
+ *  stop network configuration
  */
 - (void)stopConfigWiFi;
 
