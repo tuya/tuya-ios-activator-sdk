@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
-    TYActivatorModeEZ, // fast connect mode (EZ)
+    TYActivatorModeEZ, // smart config mode (EZ)
     TYActivatorModeAP, // hotspot mode (AP)
 } TYActivatorMode;
 

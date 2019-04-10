@@ -1,6 +1,6 @@
 {
   "name": "TuyaSmartActivator",
-  "version": "0.1.2",
+  "version": "0.3.0",
   "summary": "A short description of TuyaSmartActivator.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git",
-    "tag": "0.1.2"
+    "tag": "0.3.0"
   },
   "platforms": {
     "ios": "8.0"

@@ -1,6 +1,6 @@
 PODS:
   - CocoaAsyncSocket (7.6.3)
-  - TuyaSmartActivator (0.1.2):
+  - TuyaSmartActivator (0.3.0):
     - CocoaAsyncSocket
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
-  TuyaSmartActivator: 273f06e5c85636fc9940662664aaa8868b5b5ae5
+  TuyaSmartActivator: adda45790f0f46d1de66769e067977656c045114
 
 PODFILE CHECKSUM: e59dd6a50a16fdfb2b47d6c0744a438ac252a8fa
 
