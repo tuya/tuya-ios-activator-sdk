@@ -19,7 +19,7 @@ platform :ios, '8.0'
 
 target 'your_target_name' do
 
-      pod "TuyaSmartActivator", :git => "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git"
+      pod "TuyaSmartActivator"
 
 end
 ```

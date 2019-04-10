@@ -6,9 +6,9 @@
 
 ## 功能概述
 
-涂鸦智能配网 SDK 提供了AP，EZ 模式和 Zigbee 网关配网的功能。
+涂鸦智能配网 SDK 提供了AP，EZ 模式和 Zigbee 网关配网的功能，开始配网和停止配网要结合使用。
 
-## 快速集成
+## 快速集成 (推荐)
 
 ### 使用Cocoapods集成
 
@@ -19,7 +19,7 @@ platform :ios, '8.0'
 
 target 'your_target_name' do
 
-   pod "TuyaSmartActivator", :git => "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git"
+   pod "TuyaSmartActivator"
 
 end
 ```
@@ -30,7 +30,7 @@ CocoaPods的使用请参考：[CocoaPods Guides](https://guides.cocoapods.org/)
 
 
 
-## 手动集成
+## 手动集成 (不推荐)
 
 涂鸦智能iOS SDK依赖的第三方库有:
 
@@ -99,17 +99,31 @@ NSString *token = @"";
 
 ```objective-c
 // start config wifi AP mode
-NSString *ssid = @"";
-NSString *password = @"";
-NSString *token = @"";
-[[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
+- (void)startConfig {
+  	NSString *ssid = @"";
+		NSString *password = @"";
+		NSString *token = @"";
+		[[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
+}
+
+// stop config
+- (void)stopConfigWifi {
+    [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
+}
 ```
 
 ##### Zigbee 网关配网 
 
 ```objective-c
 // start config Zigbee Gateway
-NSString *token = @"";
-[[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
+- (void)startConfig {
+  	NSString *token = @"";
+		[[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
+}
+
+// stop config
+- (void)stopConfigWifi {
+    [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
+}
 ```
 
