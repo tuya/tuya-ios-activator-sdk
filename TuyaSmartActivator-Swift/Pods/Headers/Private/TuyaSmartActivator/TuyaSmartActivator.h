@@ -1,0 +1,1 @@
+../../../../../TuyaSmartActivator/Classes/TuyaSmartActivator.h
