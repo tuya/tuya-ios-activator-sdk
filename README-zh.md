@@ -6,7 +6,7 @@
 
 ## 功能概述
 
-涂鸦智能配网 SDK 提供了AP，EZ 模式和 Zigbee 网关配网的功能，开始配网和停止配网要结合使用。
+涂鸦智能配网 SDK 提供了AP，EZ 模式和 Zigbee 网关配网的功能，开始配网和停止配网要结合使用。主要是配合云云对接使用。
 
 ## 快速集成 (推荐)
 
@@ -64,6 +64,24 @@ end
 
 
 ![image-20181227195226694](./image-20181227195226694.png)
+
+
+
+## 涂鸦全量 SDK 兼容问题（没有引入全量SDK的忽略）
+
+如果接入了 IPC SDK，会依赖到涂鸦全量SDK，pod 集成需要使用特定的分支：
+
+```ruby
+platform :ios, '8.0'
+
+target 'your_target_name' do
+
+   pod 'TuyaSmartActivator', :git => 'https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git', :branch => 'develop_compatible'
+
+end
+```
+
+
 
 
 
