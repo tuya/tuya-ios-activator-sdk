@@ -1,4 +1,4 @@
-# 涂鸦智能配网 iOS SDK
+# 涂鸦智能配网 iOS SDK（云云对接方案）
 
 [中文版](README-zh.md) | [English](README.md)
 
@@ -69,7 +69,7 @@ end
 
 ## 涂鸦全量 SDK 兼容问题（没有引入全量SDK的忽略）
 
-如果接入了 IPC SDK，会依赖到涂鸦全量SDK，pod 集成需要使用特定的分支：
+如果接入了 IPC SDK，会依赖到涂鸦全量SDK，涂鸦智能配网 iOS SDK（云云对接方案）pod 集成需要使用特定的分支：
 
 ```ruby
 platform :ios, '8.0'
