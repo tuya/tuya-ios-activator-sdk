@@ -116,10 +116,10 @@ NSString *token = @"";
 ```objective-c
 // start config wifi AP mode
 - (void)startConfig {
-  	NSString *ssid = @"";
-		NSString *password = @"";
-		NSString *token = @"";
-		[[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
+    NSString *ssid = @"";
+    NSString *password = @"";
+    NSString *token = @""; 
+    [[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
 }
 
 // stop config
@@ -133,8 +133,8 @@ NSString *token = @"";
 ```objective-c
 // start config Zigbee Gateway
 - (void)startConfig {
-  	NSString *token = @"";
-		[[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
+    NSString *token = @"";
+    [[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
 }
 
 // stop config
@@ -148,31 +148,31 @@ NSString *token = @"";
 ```objective-c
 // start discovery device with bluetooth
 - (void)startDiscovery {
-		[[TuyaSmartActivator sharedInstance] startDiscovery:^(TYBLEAdvModel *model){
+    [[TuyaSmartActivator sharedInstance] startDiscovery:^(TYBLEAdvModel *model){
       
     }];
 }
 
 // stop discovery
 - (void)stopDiscovery {
-		[[TuyaSmartActivator sharedInstance] stopDiscovery];
+    [[TuyaSmartActivator sharedInstance] stopDiscovery];
 }
 
 // start config
 - (void)startConfigBLEWifi {
-  TYBLEAdvModel *model = #<startDiscovery result>;
-  NSString *authKey = @""; // from clund
-  NSString *random = @""; // from random
-  NSString *ssid = @"";
-	NSString *password = @"";
-	NSString *token = @"";
+    TYBLEAdvModel *model = #<startDiscovery result>;
+    NSString *authKey = @""; // from clund
+    NSString *random = @""; // from random
+    NSString *ssid = @"";
+    NSString *password = @"";
+    NSString *token = @"";
   
-  [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
-                               authKey:authKeyauthKey
-                                random:random
-                                  ssid:ssid
-                              password:password
-                                 token:token];
+    [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
+                                                                authKey:authKeyauthKey
+                                                                 random:random
+                                                                   ssid:ssid
+                                                               password:password
+                                                                  token:token];
 }
 
 // stop config
