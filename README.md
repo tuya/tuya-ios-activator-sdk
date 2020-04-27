@@ -63,7 +63,7 @@ In the`Target -> Build Phases -> Link Binary With Libraries`, add`libc++`, `libz
 
 ## Network Configuration 
 
-Tuya’s hardware module supports three modes of network configuration: fast connect mode (TLink, or EZ mode), and hotspot mode (AP mode), Wired network configuration of zigbee gateway. The EZ mode is relatively more straight- forward. It is recommended to use the hotspot mode as an alternative only when the network configuration fails with the EZ mode. 
+Tuya’s hardware module supports four modes of network configuration: fast connect mode (TLink, or EZ mode), and hotspot mode (AP mode), Wired network configuration of zigbee gateway, and BLE + Wi-Fi configuration. The EZ mode is relatively more straight- forward. It is recommended to use the hotspot mode as an alternative only when the network configuration fails with the EZ mode. BLE + Wi-Fi configuration needs to turn on Bluetooth for device search and then configure.
 
 ##### EZ mode 
 
@@ -103,5 +103,43 @@ startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:toke
 // start config Zigbee Gateway
 NSString *token = @"";
 [[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
+```
+
+##### BLE + Wi-Fi 
+
+```objective-c
+// start discovery device with bluetooth
+- (void)startDiscovery {
+		[[TuyaSmartActivator sharedInstance] startDiscovery:^(TYBLEAdvModel *model){
+      
+    }];
+}
+
+// stop discovery
+- (void)stopDiscovery {
+		[[TuyaSmartActivator sharedInstance] stopDiscovery];
+}
+
+// start config
+- (void)startConfigBLEWifi {
+  TYBLEAdvModel *model = #<startDiscovery result>;
+  NSString *authKey = @""; // from clund
+  NSString *random = @""; // from random
+  NSString *ssid = @"";
+	NSString *password = @"";
+	NSString *token = @"";
+  
+  [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
+                               authKey:authKeyauthKey
+                                random:random
+                                  ssid:ssid
+                              password:password
+                                 token:token];
+}
+
+// stop config
+- (void)stopConfigBLEWifi {
+    [[TuyaSmartActivator sharedInstance] stopConfigBLEWifiWithAdvModel:#<discoveryModel>];
+}
 ```
 
