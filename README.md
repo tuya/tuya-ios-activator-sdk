@@ -109,32 +109,32 @@ NSString *token = @"";
 
 ```objective-c
 // start discovery device with bluetooth
-- (void)startDiscovery {
-		[[TuyaSmartActivator sharedInstance] startDiscovery:^(TYBLEAdvModel *model){
+- (void)startDiscovery { 
+    [[TuyaSmartActivator sharedInstance] startDiscovery:^(TYBLEAdvModel *model){
       
     }];
 }
 
 // stop discovery
 - (void)stopDiscovery {
-		[[TuyaSmartActivator sharedInstance] stopDiscovery];
+    [[TuyaSmartActivator sharedInstance] stopDiscovery];
 }
 
 // start config
 - (void)startConfigBLEWifi {
-  TYBLEAdvModel *model = #<startDiscovery result>;
-  NSString *authKey = @""; // from clund
-  NSString *random = @""; // from random
-  NSString *ssid = @"";
-	NSString *password = @"";
-	NSString *token = @"";
+    TYBLEAdvModel *model = #<startDiscovery result>;
+    NSString *authKey = @""; // from clund
+    NSString *random = @""; // from random
+    NSString *ssid = @"";
+    NSString *password = @"";
+    NSString *token = @"";
   
-  [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
-                               authKey:authKeyauthKey
-                                random:random
-                                  ssid:ssid
-                              password:password
-                                 token:token];
+    [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
+                                                                authKey:authKeyauthKey
+                                                                 random:random
+                                                                   ssid:ssid
+                                                               password:password
+                                                                  token:token];
 }
 
 // stop config
