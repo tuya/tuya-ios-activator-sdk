@@ -85,7 +85,7 @@ end
 
 ## 设备配网
 
-涂鸦硬件模块支持三种配网模式：快连模式（TLink，简称EZ模式）、热点模式（AP模式）、Zigbee 网关配网。快连模式操作较为简便，建议在配网失败后，再使用热点模式作为备选方案。Zigbee 网关配网需要网关和路由器在一个局域网内进行配网。
+涂鸦硬件模块支持四种配网模式：快连模式（TLink，简称EZ模式）、热点模式（AP模式）、Zigbee 网关配网，BLE +  Wi-Fi 双模配网。快连模式操作较为简便，建议在配网失败后，再使用热点模式作为备选方案。Zigbee 网关配网需要网关和路由器在一个局域网内进行配网。BLE + Wi-Fi 双模配网需要开启蓝牙进行设备搜索后进行配网。
 
 ##### 获取token
 
@@ -116,10 +116,10 @@ NSString *token = @"";
 ```objective-c
 // start config wifi AP mode
 - (void)startConfig {
-  	NSString *ssid = @"";
-		NSString *password = @"";
-		NSString *token = @"";
-		[[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
+    NSString *ssid = @"";
+    NSString *password = @"";
+    NSString *token = @""; 
+    [[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
 }
 
 // stop config
@@ -133,13 +133,51 @@ NSString *token = @"";
 ```objective-c
 // start config Zigbee Gateway
 - (void)startConfig {
-  	NSString *token = @"";
-		[[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
+    NSString *token = @"";
+    [[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
 }
 
 // stop config
 - (void)stopConfigWifi {
     [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
+}
+```
+
+##### BLE + Wi-Fi 双模配网 
+
+```objective-c
+// start discovery device with bluetooth
+- (void)startDiscovery {
+    [[TuyaSmartActivator sharedInstance] startDiscovery:^(TYBLEAdvModel *model){
+      
+    }];
+}
+
+// stop discovery
+- (void)stopDiscovery {
+    [[TuyaSmartActivator sharedInstance] stopDiscovery];
+}
+
+// start config
+- (void)startConfigBLEWifi {
+    TYBLEAdvModel *model = #<startDiscovery result>;
+    NSString *authKey = @""; // from clund
+    NSString *random = @""; // from random
+    NSString *ssid = @"";
+    NSString *password = @"";
+    NSString *token = @"";
+  
+    [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
+                                                                authKey:authKeyauthKey
+                                                                 random:random
+                                                                   ssid:ssid
+                                                               password:password
+                                                                  token:token];
+}
+
+// stop config
+- (void)stopConfigBLEWifi {
+    [[TuyaSmartActivator sharedInstance] stopConfigBLEWifiWithAdvModel:#<discoveryModel>];
 }
 ```
 
