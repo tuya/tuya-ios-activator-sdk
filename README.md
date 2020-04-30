@@ -6,7 +6,7 @@
 
 ## Features Overview
 
-TuyaSmartActivator APP SDK supports three network configuration modes, quick connection mode (TLink, it is referred to as the EZ mode) and hotspot mode (AP mode),  wired network configuration of zigbee gateway.
+TuyaSmartActivator APP SDK supports four network configuration modes, quick connection mode (TLink, it is referred to as the EZ mode) and hotspot mode (AP mode),  wired network configuration of zigbee gateway, BLE + Wi-Fi Dual-mode.
 
 ## Rapid Integration
 
