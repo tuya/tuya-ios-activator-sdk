@@ -39,7 +39,7 @@ dependence on system libraries:
 - libc++
 - libz
 
-##### Using CocoaPods integration add third-party libraries
+### Using CocoaPods integration add third-party libraries
 
 Add the following content in file `Podfile`:
 
@@ -53,9 +53,9 @@ end
 
 Execute command `pod update` in the project's root directory to begin integration.
 
-##### Add system libraries
+### Add system libraries
 
-In the`Target -> Build Phases -> Link Binary With Libraries`, add`libc++`, `libz`system libraries:
+In the `Target -> Build Phases -> Link Binary With Libraries`, add `libc++`, `libz` system libraries:
 
 ![image-20181227195226694](./image-20181227195226694.png)
 
@@ -65,18 +65,38 @@ In the`Target -> Build Phases -> Link Binary With Libraries`, add`libc++`, `libz
 
 Tuya’s hardware module supports four modes of network configuration: fast connect mode (TLink, or EZ mode), and hotspot mode (AP mode), Wired network configuration of zigbee gateway, and BLE + Wi-Fi configuration. The EZ mode is relatively more straight- forward. It is recommended to use the hotspot mode as an alternative only when the network configuration fails with the EZ mode. BLE + Wi-Fi configuration needs to turn on Bluetooth for device search and then configure.
 
-##### EZ mode 
+### Obtain Token
+
+Obtain the token information from the server.
+
+```objective-c
+{
+  "secret":"reKE",
+  "region":"AY",
+  "token":"nqMwn1Nd"
+}
+
+// startConfig token = region + token + secret
+// example. 
+NSString *ssid = @"";
+NSString *password = @"";
+NSString *token = "AYnqMwn1NdreKE";// AYnqMwn1NdreKE = "AY" + "nqMwn1Nd" + "reKE" 
+[[TuyaSmartActivator sharedInstance]
+startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
+```
+
+### EZ mode 
 
 ```objective-c
 // start config wifi EZ mode
 NSString *ssid = @"";
 NSString *password = @"";
-NSString *token = @"";
+NSString *token = @""; // Assembled token
 [[TuyaSmartActivator sharedInstance]
 startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
 ```
 
-#####  Stop network configuration
+###  Stop network configuration
 
 The App will continuously broadcast the network configuration information until the network configuration succeeds or the timeout is reached once the network configuration starts. The `[TuyaSmartActivator stopConfigWiFi]` method has to be invoked if you need to cancel the network configuration or the network configuration is completed.
 
@@ -86,26 +106,26 @@ The App will continuously broadcast the network configuration information until 
 }
 ```
 
-##### AP mode
+### AP mode
 
 ```objective-c
 // start config wifi AP mode
 NSString *ssid = @"";
 NSString *password = @"";
-NSString *token = @"";
+NSString *token = @""; // Assembled token
 [[TuyaSmartActivator sharedInstance]
 startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
 ```
 
-##### Zigbee Gateway 
+### Zigbee Gateway 
 
 ```objective-c
 // start config Zigbee Gateway
-NSString *token = @"";
+NSString *token = @""; // Assembled token
 [[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
 ```
 
-##### BLE + Wi-Fi 
+### BLE + Wi-Fi 
 
 ```objective-c
 // start discovery device with bluetooth
@@ -127,7 +147,7 @@ NSString *token = @"";
     NSString *random = @""; // from random
     NSString *ssid = @"";
     NSString *password = @"";
-    NSString *token = @"";
+    NSString *token = @""; // Assembled token
   
     [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
                                                                 authKey:authKeyauthKey
