@@ -39,5 +39,7 @@ TODO: Add long description of the pod here.
   s.libraries  = 'c++', 'z'
   
   s.dependency 'CocoaAsyncSocket'
+  s.dependency 'TYBluetooth', '< 10.0'
+  s.dependency 'TuyaSmartUtil'
   
 end
