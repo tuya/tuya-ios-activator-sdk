@@ -69,7 +69,7 @@ Tuya’s hardware module supports four modes of network configuration: fast conn
 
 Obtain the token information from the server.
 
-```json
+```objective-c
 {
   "secret":"reKE",
   "region":"AY",
@@ -80,9 +80,9 @@ Obtain the token information from the server.
 // example. 
 NSString *ssid = @"";
 NSString *password = @"";
-NSString *token = "AYnqMwn1NdreKE";// = "AY" + "nqMwn1Nd" + "reKE" 
+NSString *token = "AYnqMwn1NdreKE";// AYnqMwn1NdreKE = "AY" + "nqMwn1Nd" + "reKE" 
 [[TuyaSmartActivator sharedInstance]
-startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
+startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
 ```
 
 ### EZ mode 
