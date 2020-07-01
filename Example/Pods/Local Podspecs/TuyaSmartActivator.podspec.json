@@ -1,6 +1,6 @@
 {
   "name": "TuyaSmartActivator",
-  "version": "0.3.0",
+  "version": "0.3.4",
   "summary": "A short description of TuyaSmartActivator.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/TuyaInc/tuyasmart_ios_activator_sdk.git",
-    "tag": "0.3.0"
+    "tag": "0.3.4"
   },
   "platforms": {
     "ios": "8.0"
@@ -24,6 +24,12 @@
   ],
   "dependencies": {
     "CocoaAsyncSocket": [
+
+    ],
+    "TYBluetooth": [
+      "< 10.0"
+    ],
+    "TuyaSmartUtil": [
 
     ]
   }

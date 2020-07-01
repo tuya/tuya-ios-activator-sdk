@@ -1,14 +1,21 @@
 PODS:
   - CocoaAsyncSocket (7.6.3)
-  - TuyaSmartActivator (0.3.0):
+  - TuyaSmartActivator (0.3.4):
     - CocoaAsyncSocket
+    - TuyaSmartUtil
+    - TYBluetooth (< 10.0)
+  - TuyaSmartUtil (3.15.0)
+  - TYBluetooth (3.17.0)
 
 DEPENDENCIES:
   - TuyaSmartActivator (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - CocoaAsyncSocket
+  trunk:
+    - TuyaSmartUtil
+    - TYBluetooth
 
 EXTERNAL SOURCES:
   TuyaSmartActivator:
@@ -16,8 +23,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
-  TuyaSmartActivator: adda45790f0f46d1de66769e067977656c045114
+  TuyaSmartActivator: 092f2885a8754c0a3e70701fe04830a1a065d2ee
+  TuyaSmartUtil: fede5b89a5e0cb62806f752b4337eed3daac45d1
+  TYBluetooth: 0741669a99673b1de97365fb7584eaee75db2bdd
 
 PODFILE CHECKSUM: e59dd6a50a16fdfb2b47d6c0744a438ac252a8fa
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
