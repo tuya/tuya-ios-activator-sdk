@@ -7,7 +7,10 @@
 //
 
 #import "TYViewController.h"
-#import "TuyaSmartActivator.h"
+#import <TuyaSmartMiniActivator/TuyaSmartMiniActivator.h>
+
+#define TuyaSmartActivator TuyaSmartMiniActivator
+#define TYBLEAdvModel TYMiniBLEAdvModel
 
 @interface TYViewController ()
 
