@@ -6,7 +6,7 @@
 
 ## 功能概述
 
-涂鸦智能配网 SDK 提供了 AP，EZ 模式，Zigbee 网关配网和 WiFi + BLE 双模配网的功能，开始配网和停止配网要结合使用。主要是配合云云对接使用。
+TuyaSmartMiniActivator SDK 提供了 AP，EZ 模式，Zigbee 网关配网和 WiFi + BLE 双模配网的功能，开始配网和停止配网要结合使用。主要是配合云云对接使用。
 
 ## 快速集成 (推荐)
 
