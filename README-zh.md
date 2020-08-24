@@ -1,4 +1,4 @@
-# 涂鸦智能配网 iOS SDK（云云对接方案）
+# TuyaSmartMiniActivator iOS SDK（云云对接方案）
 
 [中文版](README-zh.md) | [English](README.md)
 
