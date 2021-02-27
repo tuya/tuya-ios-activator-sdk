@@ -16,7 +16,13 @@ TuyaSmartActivator iOS SDK supports four pairing modes, fast pairing (TLink. EZ 
 Add the following to the `Podfile` file:
 
 ```ruby
-  pod "TuyaSmartActivator"
+platform :ios, '8.0'
+  
+target 'your_target_name' do
+  
+       pod "TuyaSmartActivator"
+      
+end
 ```
 Execute the `pod update` command in the root directory of the project to integrate the third-party library. 
 
@@ -35,9 +41,12 @@ The system dependency linkbases are:
 - libz
 ### Use CocoaPods to add a third-party library dependency.
 Add the following to the `Podfile` in the root directory of the project
+
 ```ruby  
+platform :ios, '8.0'
+
 target 'Your_App_Name' do
-pod "CocoaAsyncSocket"
+       pod "CocoaAsyncSocket"
 end
 ```
 Execute the `pod install` command in the root directory of the project to integrate the third-party library. 
@@ -47,64 +56,66 @@ Add `libc++` and `libz` system linkbases to  `Target -> Build Phases -> Link Bin
 ## Device pairing
 Tuya hardware modules support four pairing modes, fast pairing (TLink. EZ mode), hotspot pairing (AP mode), Zigbee gateway pairing, and Wi-Fi + BLE dual-module pairing.  Use fast pairing as preference and hotspot pairing as backup if the fast pairing fails. Zigbee gateway pairing requires the gateway and the router to pair in the same LAN BLE + Wi-Fi dual-module pairing requires enabled bluetooth to search for the device to pair.
 ### Get token
-The pairing information string obtained thorough cloud-to-cloud connection includes: 
-```json
- {
+The pairing information string obtained through cloud-to-cloud connection includes: 
+```objective-c
+{
   "secret":"reKE",
   "region":"AY",
   "token":"nqMwn1Nd"
- }
+}
+ 
  // startConfig token = region + token + secret
- // example token = "AYnqMwn1NdreKE" = "AY" + "nqMwn1Nd" + "reKE" 
-```
-### EZ mode
-```objective-c
-// Start configuring Wi-Fi EZ mode
+ // example. 
  NSString *ssid = @"";
  NSString *password = @"";
- NSString *token = @""; // assembled token
- [[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
+ NSString *token = "AYnqMwn1NdreKE";// AYnqMwn1NdreKE = "AY" + "nqMwn1Nd" + 
+ "reKE" 
+ [[TuyaSmartActivator sharedInstance]
+ startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password token:token];
 ```
+### EZ mode
+
+  ```objective-c
+  // start config wifi EZ mode
+  NSString *ssid = @"";
+  NSString *password = @"";
+  NSString *token = @""; // Assembled token
+  [[TuyaSmartActivator sharedInstance] 
+ 
+  startConfigWiFiWithMode:TYActivatorModeEZ ssid:ssid password:password 
+ token:token];
+  ```
 ### Stop pairing
 Once the pairing is started, the app keeps broadcasting pairing information until the pairing is completed or timeout.  If you need to cancel the pairing or the pairing is completed, you need to call `[TuyaSmartActivator stopConfigWiFi]`.
-```
- - (void)stopConfigWifi {
+
+```objc
+- (void)stopConfigWifi {
     [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
  }
 ```
 ### AP mode
 ```objective-c
- // Start configuring Wi-Fi AP mode
- - (void)startConfig {
-    NSString *ssid = @"";
-    NSString *password = @"";
-    NSString *token = @""; // assembled token
-    [[TuyaSmartActivator sharedInstance] startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password token:token];
- }
-  // stop config
- - (void)stopConfigWifi {
-    [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
- }
+  // start config wifi AP mode
+  NSString *ssid = @"";
+  NSString *password = @"";
+  NSString *token = @""; // Assembled token
+  [[TuyaSmartActivator sharedInstance]
+  startConfigWiFiWithMode:TYActivatorModeAP ssid:ssid password:password 
+ token:token];
 ```
 ### Zigbee gateway mode
 ```objective-c
-// Start configuring Zigbee Gateway
- - (void)startConfig {
-    NSString *token = @""; // assembled token
-    [[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token];
- }
-// stop config
- - (void)stopConfigWifi {
-    [[TuyaSmartActivator sharedInstance] stopConfigWiFi];
- }
+// start config Zigbee Gateway
+NSString *token = @""; // Assembled token
+[[TuyaSmartActivator sharedInstance] startConfigWiredDeviceWithToken:token]
 ```
 ### BLE + Wi-Fi dual-module mode
 ```objective-c
-// Start discovery device with bluetooth
+// start discovery device with bluetooth
  - (void)startDiscovery {
     [[TuyaSmartActivator sharedInstance] startDiscovery:^(TYBLEAdvModel *model){
       
-   }];
+    }];
  }
  
 // stop discovery
@@ -112,26 +123,27 @@ Once the pairing is started, the app keeps broadcasting pairing information unti
     [[TuyaSmartActivator sharedInstance] stopDiscovery];
  }
  
-// Start configuring
+// start config
  - (void)startConfigBLEWifi {
     TYBLEAdvModel *model = #<startDiscovery result>;
     NSString *authKey = @""; // from clund
     NSString *random = @""; // from random
     NSString *ssid = @"";
     NSString *password = @"";
-    NSString *token = @""; // assembled token
+    NSString *token = @""; // Assembled token
   
-   [[TuyaSmartActivator sharedInstance] 
-   startConfigBLEWifiWithAdvModel:model
-                          authKey:authKeyauthKey
-                           random:random
-                             ssid:ssid
-                         password:password
-                           token:token];
+   [[TuyaSmartActivator sharedInstance] startConfigBLEWifiWithAdvModel:model
+                          
+authKey:authKeyauthKey
+                                                                random:random
+                                                                  ssid:ssid
+ password:password
+                                                                 token:token];
  }
     // stop config
- - (void)stopConfigBLEWifi {
-    [[TuyaSmartActivator sharedInstance] stopConfigBLEWifiWithAdvModel:#<discoveryModel>];
- }
+  - (void)stopConfigBLEWifi {
+    [[TuyaSmartActivator sharedInstance] stopConfigBLEWifiWithAdvModel:#
+ <discoveryModel>];
+   }
 ```
 
